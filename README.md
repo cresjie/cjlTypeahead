@@ -2,4 +2,4 @@
 angular typeahead
 
 # Requirements
-*[jQuery] 
+*[jQuery][http://jquery.com/]
