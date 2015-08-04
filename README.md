@@ -1,5 +1,5 @@
 # cjlTypeahead
-angular typeahead
+A simple Angular.js directive wrapper around the Twitter Typeahead library.
 
 # Requirements
 * [jQuery][jquery] v1.6+
