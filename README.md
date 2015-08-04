@@ -29,7 +29,7 @@ Usage
       
       $scope.$watch('typeahead',function(o,typeahead){
           // we name the directive "cjl-typeahead" - myTypeahead
-          // use the method "$on" to listen to events
+          // use the method "$on" to add listeners to dom, jquery, typeahead events
 					typeahead.myTypeahead.$on('typeahead:selected',function(e,selected){
 						$scope.selectedData = selected;
 					});
