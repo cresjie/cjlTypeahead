@@ -1,0 +1,62 @@
+<html ng-app="app">
+	
+	<head>
+
+		<link rel="stylesheet" href="css/typeahead.css">
+
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/typeahead.jquery.js"></script>
+		<script src="js/angular-cjlTypeahead.js"></script>
+
+	</head>
+
+	<body ng-controller="MyController">
+
+		<input type="text" name="search" class="typeahead" cjl-typeahead="cj" typeahead-options="null" typeahead-datasets="typeaheadDatasets" placeholder="search user"> 
+		
+		<div>
+			selected info
+				<p>id: {{selectedData.id}}</p>
+				<p>name: {{selectedData.name}}</p>
+		</div>
+		
+	</body>
+
+	<script>
+			var users= [
+				{id:1,name:'cres'},
+				{id:2,name:'labs'},
+				{id:3, name:'allan'}
+			];
+	
+			var app = angular.module('app',['cjl.typeahead']);
+			app.controller('MyController',function($scope){
+				
+
+				$scope.$watch('typeahead',function(o,typeahead){
+
+					typeahead.cj.$on('typeahead:selected',function(e,selected){
+						$scope.selectedData = selected;
+					});
+
+					typeahead.cj.$on('typeahead:cursorchange',function(e, selected, p){
+						console.log(selected);
+					});
+
+				});
+				
+
+				$scope.typeaheadDatasets={
+						display:['name'],
+						source:function(q,cb){
+							cb(users);
+						}
+					}
+				
+			});
+
+		</script>
+
+</html>
+
