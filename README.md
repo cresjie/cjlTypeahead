@@ -14,7 +14,7 @@ Usage
 ---------------
 ```html
 <body ng-controller="MyController">
-  <input type="text" name="search" class="typeahead" cjl-typeahead="cj" typeahead-options="null" typeahead-datasets="typeaheadDatasets" placeholder="search user">
+  <input type="text" name="search" class="typeahead" cjl-typeahead="myTypeahead" typeahead-options="null" typeahead-datasets="typeaheadDatasets" placeholder="search user">
   <!--
     Directive: cjl-typeahead
       Attributes:
