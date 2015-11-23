@@ -9,7 +9,7 @@
 
 					element.$on = function(event, callback){
 						element.on(event,function(event, obj, obj2){
-							callback(event, obj, obj2);
+							callback.call(this,event, obj, obj2);
 							scope.$apply();
 						});
 					};
