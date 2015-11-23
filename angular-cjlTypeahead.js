@@ -12,6 +12,7 @@
 							callback.call(this,event, obj, obj2);
 							scope.$apply();
 						});
+						return this;
 					};
 
 					if( !scope.typeahead )
